@@ -71,9 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "CLEAN UP",
             price: "350.000Gs.",
             sku: "B-CHCLV17HTH-NYY-BLACK",
-            img1: "blackedition.jpg.webp",
-            img2: "blackeditionback.jpg.webp",
-            img3: "blackedition.jpg.webp"
+            img1: "blackedition.JPG.webp",
+            img2: "blackeditionback.JPG.webp",
+            img3: "blackedition.JPG.webp"
         },
         {
             title: "New York Yankees '47 CLEAN UP Olive Adjustable Hat",
