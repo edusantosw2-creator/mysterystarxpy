@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (whatsappBtn) {
         const text = `¡Hola! Me gustaría comprar esta gorra:\n\n🧢 *Product:* ${title}\n💰 *Price:* ${price}\n🏷️ *SKU:* ${sku}`;
         const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-        const baseUrl = isMobile ? 'https://api.whatsapp.com/send' : 'https://web.whatsapp.com/send';
+        const baseUrl = isMobile ? 'https://api.whatsapp.com/send' : 'https://web.whatsapp.com/send'| "5950994885917";
 
-        whatsappBtn.href = `${baseUrl}?phone=${PHONE_NUMBER}&text=${encodeURIComponent(text)}`;
+        whatsappBtn.href = `${baseUrl}?phone=${PHONE_NUMBER || "5950994885917"}&text=${encodeURIComponent(text)}`;
     }
 
     // Gallery Dots Sync
