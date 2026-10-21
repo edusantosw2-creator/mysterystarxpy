@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Put your business WhatsApp phone number here (include country code, no '+')
-    const PHONE_NUMBER = "=+595994885917";
+    const PHONE_NUMBER = "595994885917";
 
     // 2. Read URL parameters passed directly from index.html
     const params = new URLSearchParams(window.location.search);
@@ -12,19 +12,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const img3 = params.get('img3') || "images/hat-ny-3.png";
 
     // 3. Populate product details
-    document.getElementById('pdpTitle').textContent = title;
-    document.getElementById('pdpPrice').textContent = price;
-    document.getElementById('pdpSku').textContent = `SKU: ${sku}`;
+    const titleEl = document.getElementById('pdpTitle');
+    const priceEl = document.getElementById('pdpPrice');
+    const skuEl = document.getElementById('pdpSku');
+
+    if (titleEl) titleEl.textContent = title;
+    if (priceEl) priceEl.textContent = price;
+    if (skuEl) skuEl.textContent = `SKU: ${sku}`;
 
     // 4. Render the 3 photos into the gallery
     const fallback = 'https://via.placeholder.com/600x600/f4f4f2/111111?text=%2747+Hat';
-    
+
     const setImg = (id, src) => {
         const el = document.getElementById(id);
-        if (el) {
-            el.src = src;
-            el.onerror = () => el.src = fallback;
-        }
+        if (!el) return;
+
+        el.src = src;
+        el.onerror = () => {
+            el.src = fallback;
+            el.onerror = null;
+        };
     };
 
     setImg('img1', img1);
@@ -36,9 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (whatsappBtn) {
         const text = `¡Hola! Me gustaría comprar esta gorra:\n\n🧢 *Product:* ${title}\n💰 *Price:* ${price}\n🏷️ *SKU:* ${sku}`;
         const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-        const baseUrl = isMobile ? 'https://api.whatsapp.com/send' : 'https://web.whatsapp.com/send'| "5950994885917";
+        const baseUrl = isMobile ? 'https://api.whatsapp.com/send' : 'https://web.whatsapp.com/send';
 
-        whatsappBtn.href = `${baseUrl}?phone=${PHONE_NUMBER || "5950994885917"}&text=${encodeURIComponent(text)}`;
+        whatsappBtn.href = `${baseUrl}?phone=${PHONE_NUMBER}&text=${encodeURIComponent(text)}`;
     }
 
     // Gallery Dots Sync
