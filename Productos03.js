@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = `Hello! I would like to order this hat:\n\n*Product:* ${title}\n*Price:* ${price}\n*SKU:* ${sku}`;
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     const baseUrl = isMobile ? 'https://api.whatsapp.com/send' : 'https://web.whatsapp.com/send';
-    whatsappBtn.href = `${baseUrl}?phone=${PHONE_NUMBER}&text=${encodeURIComponent(message)}`;
+    whatsappBtn.href = `${baseUrl}?phone=${PHONE_NUMBER || "5950994885917"}&text=${encodeURIComponent(message)}`;
 
     // Gallery Dots Swipe Sync
     const track = document.getElementById('galleryTrack');
