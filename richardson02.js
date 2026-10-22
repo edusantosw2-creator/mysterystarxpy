@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Trucker Cap",
             price: "230.000Gs.",
             sku: "B-CHCLV17HTH-LAD",
-            img1: "RICHARDSONCAP03 copy.jpg",
-            img2: "RICHARDSONCAP03 copy.jpg",
-            img3: "RICHARDSONCAP03 copy.jpg"
+            img1: "RICHARDSONCAP03.jpg",
+            img2: "RICHARDSONCAP03.jpg",
+            img3: "RICHARDSONCAP03.jpg"
         },
 
          {
